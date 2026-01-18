@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #FFF5F5;
+  font-family: Arial, sans-serif;
+  position: relative;
+  height: 90vh;
+}
+body.start{
+    display: grid;
+    place-items: center;
+}
+
+.end {
+  display: none;
+}
+.start h1 {
+  display: none;
+}
+
+
+#endPage svg {
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.envelope {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  transition: all 0.7s;
+  .sides {
+    inset: 0;
+    position: absolute;
+  }
+  .top{
+    border: 100px solid #f87171;
+    clip-path: polygon(50% 50%, 0% 0, 100% 0);
+    z-index: 1;
+      transform-origin: top;
+  transition: transform 0.8s ease-in-out;
+  }
+  #isOpen{
+    transform: rotateX(-180deg);
+  }
+  .bottom {
+    border: 100px solid #fecaca;
+    clip-path: polygon(0 100%, 100% 100%, 50% 45%);
+  }
+  .right {
+    border: 100px solid #fca5a5;
+    clip-path: polygon(50% 50%, 100% 100%, 100% 0);
+  }
+  .left {
+    clip-path: polygon(50% 50%, 0 100%, 0 0);
+    border: 100px solid #fca5a5;
+  }
+  .back{
+    border: 100px solid #FEE2E2;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  label {
+    color: #ffff;
+    position: absolute;
+    top: 60px;
+    left: 110px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .massage-container#close{
+    opacity: 0;
+    transition: opacity 0.7s ease-in;
+  }
+  .massage-container#open{
+    position: absolute;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 30;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF5F5;
+    font-size: 20px;
+    border-radius: 15px;
+    width: 350px;
+    border: 2px solid #FEE2E2;
+    height: 150px;
+    padding: 20px;
+     button{
+        padding: 10px 25px;
+        border: none;
+        font-size: 15px;
+        border-radius: 30px;
+        background: crimson;
+        color: white;
+        cursor: pointer;
+        transition: all 0.5s ease-in;
+        &:hover{
+            background: rgba(220, 20, 60, 0.658);
+        }
+    }
+  }
+}
+.finalPage svg{
+    width: 500px;
+}
+.hidden{
+    display: none;
+}

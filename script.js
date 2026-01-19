@@ -81,6 +81,25 @@ yesBtns.forEach(btn => {
         document.body.classList.add("start");
     })
 })
+document.querySelector(".يب").addEventListener("click", () => {
+  emailjs.send("service_vcsjvpj", "template_37uovwj", {
+    message: "قالت يب ❤️"
+  })
+  .then(() => {
+    console.log("Email sent");
+  })
+  .catch(err => console.error(err));
+});
+
+document.querySelector(".sure").addEventListener("click", () => {
+  emailjs.send("service_vcsjvpj", "template_37uovwj", {
+    message: "قالت💚 أكيد يب "
+  })
+  .then(() => {
+    console.log("Email sent");
+  })
+  .catch(err => console.error(err));
+});
 
 
 
